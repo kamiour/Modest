@@ -1,0 +1,60 @@
+.section-list {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+  counter-reset: number;
+  list-style-type: none;
+  margin-top: 45px;
+
+  @media screen and (min-width: 640px) {
+    margin-top: 0;
+  }
+
+  li {
+    @include flex(center, stretch);
+    margin-bottom: 35px;
+
+    &::before {
+      counter-increment: number;
+      content: '0' counter(number);
+      @include wrap(40px, 40px, 0, 0);
+      @include flex(center, center);
+      flex-shrink: 0;
+      background-color: $color-secondary;
+      color: $color-reverse;
+      font-family: $f-family-secondary;
+      @include font(18px, 400, 1);
+      margin-right: 15px;
+
+      @media screen and (min-width: 960px) {
+        @include wrap(50px, 50px, 0, 0);
+        @include font(20px, 400, 1);
+        margin-right: 20px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.list-title {
+  color: $color-main;
+  @include font(16px, 400, 1.2);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: 960px) {
+    @include font(18px, 400, 1.2);
+  }
+}
+
+.list-description {
+  margin: 0;
+  color: $color-additional;
+
+  @media screen and (min-width: 960px) {
+    @include font(16px, 400, 26px);
+  }
+}

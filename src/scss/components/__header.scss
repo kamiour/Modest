@@ -1,0 +1,43 @@
+.header {
+  margin: 0;
+  background-color: $color-reverse;
+  height: 100%;
+  background-color: $color-bg-black;
+
+  .header-layout {
+    @include flex(space-between, stretch);
+    padding: 0;
+    align-items: stretch;
+    padding: 20px 0;
+  }
+
+  .header-left {
+    padding: 0;
+    @include flex(space-between, stretch);
+    margin-right: 20px;
+    min-width: 98px;
+  }
+
+  .header-right {
+    @include flex(center, center);
+  }
+}
+
+.burger-icon {
+  @include flex(center, center);
+  @include wrap(37px, 37px, 0, 0);
+  margin: 0;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-name-wrap {
+  margin: 0;
+  padding: 0;
+  max-width: 160px;
+}

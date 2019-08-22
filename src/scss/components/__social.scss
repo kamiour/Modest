@@ -1,0 +1,71 @@
+.social {
+  padding: 0;
+  @include flex(center, center);
+
+  .section-about & {
+    @include spacing(1px);
+    margin-top: 35px;
+  }
+
+  .section-team & {
+    @include spacing(1px);
+  }
+
+  .footer & {
+    @include spacing(1px);
+  }
+
+  & > li {
+    list-style-type: none;
+  }
+
+  &-link {
+    @include flex(center, center);
+  }
+
+  .section-about &-size {
+    @include wrap(45px, 45px, 13px, 0);
+    background-color: $color-additional-light;
+    @include flex(center, center);
+
+    &:hover {
+      background-color: darken($color-additional-light, 8%);
+    }
+
+    @media screen and (min-width: 960px) {
+      @include wrap(60px, 60px, 18px, 0);
+    }
+  }
+
+  .section-team &-size {
+    @include wrap(30px, 30px, 8px, 0);
+    background-color: $color-additional-dark;
+    @include flex(center, center);
+
+    &:hover {
+      background-color: lighten($color-additional-dark, 10%);
+    }
+
+    @media screen and (min-width: 480px) {
+      @include wrap(40px, 40px, 10px, 0);
+    }
+  }
+
+  .footer &-size {
+    @include wrap(22px, 22px, 4px, 0);
+    background-color: $color-bg-dark;
+    @include flex(center, center);
+
+    &:hover {
+      background-color: lighten($color-bg-dark, 10%);
+    }
+
+    @media screen and (min-width: 480px) {
+      @include wrap(25px, 25px, 5px, 0);
+    }
+
+    @media screen and (min-width: 640px) {
+      @include wrap(30px, 30px, 6px, 0);
+    }
+  }
+}

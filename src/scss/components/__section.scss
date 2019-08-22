@@ -1,0 +1,182 @@
+.section {
+  padding: 40px 0;
+  margin: 0;
+  position: relative;
+
+  &-reverse {
+    background-color: $color-bg-dark;
+
+    .section-title {
+      color: $color-reverse;
+    }
+  }
+
+  &-about {
+    border-bottom: 2px solid $color-additional-light;
+  }
+
+  @media screen and (min-width: 480px) {
+    padding: 50px 0;
+  }
+
+  @media screen and (min-width: 640px) {
+    padding: 65px 0;
+  }
+
+  @media screen and (min-width: 960px) {
+    padding: 85px 0;
+  }
+
+  &-layout {
+    @include flex(center, stretch);
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 480px) {
+      @include spacing(10px);
+    }
+  }
+
+  .section-about &-main {
+    @include flex(center, center);
+    flex-direction: column;
+
+    @media screen and (min-width: 640px) {
+      @include flex(flex-start, flex-start);
+    }
+  }
+
+  &-header {
+    @include flex(center, flex-start);
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+  }
+  
+  &-title {
+    @include font(24px, 700, 36px);
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    padding-left: 12px;
+    border-left: 10px solid $color-additional-light;
+
+    @media screen and (min-width: 480px) {
+      & {
+        margin-bottom: 42px;
+      }
+    }
+
+    @media screen and (min-width: 640px) {
+      & {
+        @include font(28px, 700, 38px);
+        margin-bottom: 50px;
+      }
+    }
+
+    @media screen and (min-width: 960px) {
+      & {
+        @include font(36px, 700, 36px);
+        margin-bottom: 63px;
+      }
+    }
+
+    &.title-reverse {
+      color: $color-reverse;
+      border-left: 10px solid $color-additional;
+    }
+  }
+
+  &-subtitle {
+    text-transform: uppercase;
+    @include font(20px, 700, 30px);
+
+    @media screen and (min-width: 960px) {
+      .section-contact & {
+        margin-top: 30px;
+        margin-bottom: 28px;
+      }
+    } 
+  }
+
+  &-description {
+    @include font(14px, 400, 20px);
+    color: $color-additional;
+    margin: 0;
+    text-align: left;
+
+    @media screen and (min-width: 640px) {
+      & {
+        @include font(15px, 400, 26px);
+      }
+    }
+
+    @media screen and (min-width: 960px) {
+      & {
+        @include font(16px, 400, 26px);
+        margin: 0;
+      }
+    }  
+  }
+
+  &-media {
+    position: relative;
+
+    @media screen and (min-width: 480px) {
+      & {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &-clients {
+    .list-clients {
+      @include flex(space-around, center);
+      list-style-type: none;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      @include spacing(12px);
+
+      & li {
+      @include flex(center, center);
+      margin-bottom: 24px;
+      }
+    }  
+  }
+}
+
+.col {
+  margin: 0;
+  min-height: 1px;
+  margin-bottom: 15px;
+
+  .section-services & {
+    margin-bottom: 20px;
+  }
+
+  .section-features & {
+    margin-bottom: 40px;
+  }
+}
+
+.icon-size {
+  @include wrap(10px, 10px, 0, 0);
+}
+
+.display-toggle {
+  transition-duration: 0.2s;
+  
+  &.hidden {
+    display: none;
+  }
+  
+  &.visuallyhidden {
+    opacity: 0;
+  }
+
+  &.invisible {
+    display: none;
+  }
+}
+
+.bg-dark {
+  background-color: $color-bg-dark;
+}

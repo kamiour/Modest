@@ -1,0 +1,257 @@
+.card {
+  @include flex(flex-start, center);
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+
+  &-header {
+    position: relative;
+    width: 100%;
+  }
+
+  &-media {
+    margin: 0;
+  }
+
+  &-team {
+    .card-body {
+      padding: 20px;
+      width: 100%;
+      background-color: $color-bg-blue;
+      flex-grow: 1;
+    }
+
+    &:hover {
+      .card-body {
+        background-color: $color-additional-dark;
+  
+        .card-title, .card-subtitle {
+          color: $color-reverse;
+        }
+      }
+    }
+  }
+
+  &-work {
+    .card-foreground-body {
+      width: 100%;
+      @include flex(center, center);
+      flex-grow: 1;
+      
+      .figure-plus {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+      }     
+    }
+
+    .card-foreground-footer {
+      padding: 15px;
+      width: 100%;
+      @include flex(center, center);
+      text-align: center;
+      background-color: $color-additional-dark;
+
+      @media screen and (min-width: 480px) {
+        & {
+          padding: 7px;
+        }
+      }
+
+      @media screen and (min-width: 960px) {
+        & {
+          padding: 15px;
+          @include flex(left, center);
+        }
+      }
+
+      .card-title {
+        color: $color-reverse;
+      }
+    }
+
+    &:hover .card-media .img {
+      width: 110%;
+      height: 110%;
+    }
+  }
+
+  &-services {
+    padding: 15px;
+    box-shadow: 0 8px 28px rgba(6,6,90,.06);
+
+    .card-media {
+      margin: 0 auto;
+      max-width: 100px;
+      margin-bottom: 20px;
+    }
+  }
+  
+
+  &-background {
+    margin: 0;
+    width: 100%;
+  }
+  
+  &-foreground {
+    @include overlay(2, transparent, 1);
+    @include flex(center, center);
+    display: none;
+  }
+  
+  &-overlay {
+    @include overlay(1, $color-overlay, 0.5);
+    display: none;
+    margin: 0;
+
+    .card-work & {
+      @include overlay(1, darken($color-overlay, 15%), 0.6);
+    }
+  }
+  
+  &-title {
+    margin: 0;
+    @include font(15px, 600, 24px);
+    color: $color-main;
+    text-transform: uppercase;
+    text-align: center;
+    overflow-wrap: break-word;
+
+    .card-team & {
+      margin-bottom: 8px;
+    }
+
+    @media screen and (min-width: 480px) {
+      & {
+        @include font(17px, 600, 26px);
+      }
+
+      .card-work & {
+        @include font(14px, 600, 24px);
+      }
+    }
+
+    @media screen and (min-width: 640px) {
+      & {
+        @include font(18px, 600, 28px);
+      }
+
+      .card-work & {
+        @include font(14px, 600, 24px);
+      }
+    }
+
+    @media screen and (min-width: 960px) {
+      & {
+        @include font(18px, 600, 28px);
+      }
+
+      .card-work & {
+        @include font(16px, 600, 28px);
+      }
+
+      .card-team & {
+        @include font(16px, 600, 24px);
+        margin: 0;
+        text-align: left;
+        margin-bottom: 0;
+      }
+    }
+
+    .section-reverse & {
+      color: $color-reverse;
+    }
+
+    .card-features & {
+      text-align: left;
+      margin-top: 14px;
+
+      @media screen and (min-width: 960px) {
+        margin-top: 52px;
+        margin-bottom: 26px;
+      }
+    }
+
+    .card-services & {
+      @include font(14px, 600, 20px);
+
+      @media screen and (min-width: 480px) {
+        & {
+          @include font(15px, 600, 24px);
+        }
+      }
+
+      @media screen and (min-width: 960px) {
+        & {
+          @include font(17px, 600, 24px);
+        }
+      }
+    }
+  }
+
+  &-subtitle {
+    margin: 0;
+    @include font(13px, 400, 18px);
+    color: $color-additional;
+    text-align: center;
+    text-transform: none;
+    overflow-wrap: break-word;
+
+    @media screen and (min-width: 480px) {
+      & {
+        @include font(15px, 400, 23px);
+      }
+    }
+
+    @media screen and (min-width: 960px) {
+      .card-team & {
+        @include font(16px, 400, 26px);
+        text-align: left;
+      }
+    }
+  }
+
+  &-description {
+      text-align: center;
+      
+      .section-reverse & {
+        color: $color-additional-light;
+      }
+
+      .section-features & {
+        margin-top: 10px;
+        text-align: left;
+        @include font(16px, 400, 26px);
+      }
+
+      .card-services & {
+        @include font(12px, 400, 18px);
+        color: $color-additional;
+
+        @media screen and (min-width: 480px) {
+          & {
+            @include font(13px, 400, 20px);
+          }
+        }
+
+        @media screen and (min-width: 960px) {
+          & {
+            @include font(15px, 400, 24px);
+          }
+        }
+      }
+    }
+
+  & .fancybox-thumbnail {
+    display: none;
+  }
+
+  &:hover {
+    .card-overlay, &:hover .card-foreground {
+      @include flex(center, center);
+      flex-direction: column;
+    }
+  }
+}
